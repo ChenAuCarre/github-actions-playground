@@ -1,7 +1,7 @@
 name: httpie-caller
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       httpie-command:
         description: "The httpie CLI command to execute."
