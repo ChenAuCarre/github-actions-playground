@@ -1,0 +1,16 @@
+name: httpie-caller
+
+on:
+  workflow_call:
+    inputs:
+      httpie-command:
+        description: "The httpie CLI command to execute."
+        required: true
+        type: string
+        default: "http GET https://httpbin.org/get"
+
+jobs:
+  run-httpie-command:
+  uses: ./.github/workflows/httpie-runtime.yml
+  with:
+    httpie-command: ${{ inputs.httpie-command }}

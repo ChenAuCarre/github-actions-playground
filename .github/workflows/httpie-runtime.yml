@@ -1,0 +1,26 @@
+name: httpie-runtime
+
+on:
+  workflow_call:
+    inputs:
+      httpie-command:
+        description: "The httpie CLI command to execute."
+        required: true
+        type: string
+
+jobs:
+  run-httpie:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install httpie
+        run: pip install --upgrade pip httpie
+
+      - name: Execute httpie command
+        env:
+          HTTPIE_COMMAND: ${{ inputs.httpie-command }}
+        run: eval $HTTPIE_COMMAND
