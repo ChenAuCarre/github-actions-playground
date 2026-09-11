@@ -8,4 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: List files
-        run: ls -la
+        run: |
+          pwd
+          ls -la
