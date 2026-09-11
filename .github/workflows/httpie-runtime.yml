@@ -1,4 +1,4 @@
-name: httpie-runtime
+name: httpie Runtime
 
 on:
   workflow_call:

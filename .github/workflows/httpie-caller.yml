@@ -1,4 +1,4 @@
-name: httpie-caller
+name: Run httpie Command
 
 on:
   workflow_dispatch:
